@@ -1,0 +1,21 @@
+﻿@page "/wf/demo"
+@rendermode InteractiveServer
+
+@using System.Web.UI
+@using System.Web.UI.WebControls
+
+@inherits ControlComponent
+<p>Click on the submit button.</p>
+
+<asp.Button Text="Submit" OnClick="this.SubmitBtn_Click" />
+
+<asp.Label @ref="this.message" />
+
+@code {
+    private Label message;
+
+    protected void SubmitBtn_Click(object sender, EventArgs e)
+    {
+        message.Text = "Hello World!!";
+    }
+}
